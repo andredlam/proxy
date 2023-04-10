@@ -7,7 +7,9 @@
 
     $ ng serve --open
 
-    $ ng generate module proxy
-    $ ng generate c proxy
-    $ 
+    $ ng g m proxy
+    $ ng g c proxy
+    
+    $ ng add @angular/material
+    
 ```

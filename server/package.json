@@ -31,6 +31,7 @@
         "@nestjs/serve-static": "^3.0.1",
         "@prisma/client": "^4.12.0",
         "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.0",
         "nestjs-ldap": "^3.5.1",
         "pg": "^8.10.0",
         "reflect-metadata": "^0.1.13",
