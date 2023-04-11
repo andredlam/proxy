@@ -26,17 +26,20 @@ async function bootstrap() {
 
     const serverIP = await getServerIp();
 
-    const httpsOptions = {
-        key: fs.readFileSync(path.join(__dirname, '../secrets/key.pem'), 'utf8'),
-        cert: fs.readFileSync(path.join(__dirname, '../secrets/cert.pem'), 'utf8'),
-    };
+    // const httpsOptions = {
+    //     key: fs.readFileSync(path.join(__dirname, '../../secrets/key.pem'), 'utf8'),
+    //     cert: fs.readFileSync(path.join(__dirname, '../../secrets/cert.pem'), 'utf8'),
+    // };
 
-    const app = await NestFactory.create(AppModule, {
-        httpsOptions,
-        logger: ['log', 'error', 'warn']
-    });
+    // const app = await NestFactory.create(AppModule, {
+    //     httpsOptions,
+    //     logger: ['log', 'error', 'warn']
+    // });
 
-    await app.listen(process.env.PORT || 443);
+    const app = await NestFactory.create(AppModule, {});
+    
+
+    await app.listen(process.env.PORT || 3000);
     console.log(`Application is running on: ${await app.getUrl()}`);
     console.log(`Detecting server IP is ${serverIP}`);
 

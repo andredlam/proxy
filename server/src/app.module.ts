@@ -18,7 +18,7 @@ import { CommonService } from './shared/common/common.service';
     ],
     imports: [
         ServeStaticModule.forRoot({
-            rootPath: join(__dirname, '..', 'public'),
+            rootPath: join(__dirname, '..', '..', 'public'),
             exclude: ['/api*'],
         }),
         CommonModule,
