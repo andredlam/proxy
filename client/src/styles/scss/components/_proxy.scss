@@ -1,0 +1,41 @@
+.bmc-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+    border: 0 0 1px 0;
+    border-width: 1px;
+    border-bottom-style: inset;
+
+    .bmc-form {
+        align-items: center;
+        display: block;
+        .bmc-input {
+            width: 200px;
+            height: 20px;
+        }
+        .form-control-feedback.invalid-feedback {
+            font-size: 12px !important;
+            color: red;
+            font-style: italic;
+        }
+
+    }
+
+    .bmc-btn {
+        padding-left: 20px;
+        .bmc-go {
+            height: 25px;
+            width: 50px;
+        }
+    }
+}
+
+.bmc-view-container {
+    width: 100%;
+    height: 80vh;
+
+}

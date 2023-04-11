@@ -1,3 +1,28 @@
-<p>this proxy works!</p>
+<form novalidate [formGroup]="myform">
+    <div class="bmc-container">
+        <div class="bmc-form">
+            <label for="BMC IP Address"></label>
+            <input type="ipaddress" class="bmc-input" placeholder="BMC IP address" formControlName="ipaddress" [ngClass]="{
+                        'is-invalid': ipaddress.invalid && (ipaddress.dirty || ipaddress.touched),
+                        'is-valid': ipaddress.valid && (ipaddress.dirty || ipaddress.touched)
+                    }">
+            <div class="form-control-feedback invalid-feedback" *ngIf="ipaddress.errors">
+                <p *ngIf="ipaddress.errors?.['required']">&nbsp;</p>
+                <p *ngIf="ipaddress.errors?.['pattern']">IP Address is invalid</p>
+            </div>
 
-<iframe src="https://10.0.0.209" style="width:100%; height: 90vh;"></iframe>
+        </div>
+        <div class="bmc-btn">
+            <button class="bmc-go" (click)="viewBMC()">Go</button>
+            <div class="form-control-feedback invalid-feedback" *ngIf="ipaddress.errors">
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bmc-view-container">
+        <div *ngIf="isValid">
+            <iframe [src]="displayURL | safe" style="width:100%; height: 90vh;"></iframe>
+        </div>
+    </div>
+</form>
